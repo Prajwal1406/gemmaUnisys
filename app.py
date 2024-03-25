@@ -1,13 +1,13 @@
-# import streamlit as st
-# from transformers import AutoTokenizer, AutoModelForCausalLM
-# import torch
-# from transformers import AutoTokenizer, AutoModelForCausalLM
-# from transformers import BitsAndBytesConfig, GemmaTokenizer
-# from dotenv import load_dotenv
-# import os
+import streamlit as st
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import BitsAndBytesConfig, GemmaTokenizer
+from dotenv import load_dotenv
+import os
 
-# load_dotenv()
-# HF_TOKEN = os.getenv("HF_TOKEN")
+load_dotenv()
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 # model_id = "Prajwal3009/gemma2bunisys"
 # bnb_config = BitsAndBytesConfig(
@@ -47,7 +47,7 @@ user_input = st.text_input("Type your message here and press enter", key="input"
 if user_input:
     # Convert input text to tokens
     input_ids = tokenizer.encode(user_input, return_tensors="pt")
-    input_ids = input_ids.to(model.device)
+    output_ids = input_ids.to(model.device)
 
     # Convert generated tokens to string
     response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
