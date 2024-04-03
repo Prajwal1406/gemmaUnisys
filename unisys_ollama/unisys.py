@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-os.environ["LANGCHAIN_TRACING_V2"]="true"
+LANGCHAIN_TRACING_V2="true"
 LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
-os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
-os.environ["LANGCHAIN_PROJECT"]=os.getenv("LANGCHAIN_PROJECT")
+LANGCHAIN_API_KEY="ls__a6ef969716ef4689a2bdd5ec8c635a8d"
+LANGCHAIN_PROJECT="Unisys Query Assistant"
 
 
 prompt=ChatPromptTemplate.from_messages(
